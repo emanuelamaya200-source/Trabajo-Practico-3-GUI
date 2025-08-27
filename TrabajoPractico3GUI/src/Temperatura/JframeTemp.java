@@ -125,17 +125,17 @@ public class JframeTemp extends javax.swing.JFrame {
     // Tomar el valor del campo de texto
     double celsius = Double.parseDouble(Introducirgrados.getText());
 
-    // Conversión a Fahrenheit
+    
     double fahrenheit = celsius * 9 / 5 + 32;
 
-    // Mostrar resultado en ventana emergente
+   
     JOptionPane.showMessageDialog(this,
             celsius + " °C = " + fahrenheit + " °F",
             "Resultado",
             JOptionPane.INFORMATION_MESSAGE);
 
 } catch (NumberFormatException ex) {
-    // Si el usuario escribe algo que no es número
+    
     JOptionPane.showMessageDialog(this,
             "Por favor ingrese un número válido",
             "Error",
