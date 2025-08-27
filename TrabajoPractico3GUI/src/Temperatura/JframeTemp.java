@@ -4,6 +4,8 @@
  */
 package Temperatura;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Ema
@@ -31,6 +33,7 @@ public class JframeTemp extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         Introducirgrados = new javax.swing.JTextField();
+        ConverBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -50,6 +53,13 @@ public class JframeTemp extends javax.swing.JFrame {
             }
         });
 
+        ConverBtn.setText("Convertir");
+        ConverBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ConverBtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -57,16 +67,18 @@ public class JframeTemp extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(333, 333, 333)
-                        .addComponent(Introducirgrados, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(216, 216, 216)
                         .addComponent(jLabel3))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(152, 152, 152)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 489, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 489, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(333, 333, 333)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(ConverBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Introducirgrados, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(193, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -77,10 +89,12 @@ public class JframeTemp extends javax.swing.JFrame {
                 .addGap(66, 66, 66)
                 .addComponent(jLabel3)
                 .addGap(74, 74, 74)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Introducirgrados, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(508, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Introducirgrados, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(54, 54, 54)
+                .addComponent(ConverBtn)
+                .addContainerGap(431, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -104,6 +118,31 @@ public class JframeTemp extends javax.swing.JFrame {
     private void IntroducirgradosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IntroducirgradosActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_IntroducirgradosActionPerformed
+
+    private void ConverBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConverBtnActionPerformed
+        
+        try {
+    // Tomar el valor del campo de texto
+    double celsius = Double.parseDouble(Introducirgrados.getText());
+
+    // Conversión a Fahrenheit
+    double fahrenheit = celsius * 9 / 5 + 32;
+
+    // Mostrar resultado en ventana emergente
+    JOptionPane.showMessageDialog(this,
+            celsius + " °C = " + fahrenheit + " °F",
+            "Resultado",
+            JOptionPane.INFORMATION_MESSAGE);
+
+} catch (NumberFormatException ex) {
+    // Si el usuario escribe algo que no es número
+    JOptionPane.showMessageDialog(this,
+            "Por favor ingrese un número válido",
+            "Error",
+            JOptionPane.ERROR_MESSAGE);
+}
+
+    }//GEN-LAST:event_ConverBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -142,6 +181,7 @@ public class JframeTemp extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton ConverBtn;
     private javax.swing.JTextField Introducirgrados;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
