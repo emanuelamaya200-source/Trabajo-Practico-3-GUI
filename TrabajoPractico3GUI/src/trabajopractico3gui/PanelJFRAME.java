@@ -61,13 +61,28 @@ public class PanelJFRAME extends javax.swing.JFrame {
 
         jButton2.setText("Ingresar");
         jButton2.setEnabled(false);
+        jButton2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jButton2KeyTyped(evt);
+            }
+        });
 
         jButton3.setText("ver");
+        jButton3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jButton3KeyTyped(evt);
+            }
+        });
 
         jButton5.setText("ocultar");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
+            }
+        });
+        jButton5.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jButton5KeyPressed(evt);
             }
         });
 
@@ -163,6 +178,18 @@ public class PanelJFRAME extends javax.swing.JFrame {
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jButton3KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3KeyTyped
+
+    private void jButton5KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jButton5KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton5KeyPressed
+
+    private void jButton2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jButton2KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2KeyTyped
 
     /**
      * @param args the command line arguments
